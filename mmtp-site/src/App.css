@@ -19,3 +19,65 @@ body {
 .section {
   padding: var(--section-padding) 0;
 }
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: var(--color-primary);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border-radius: var(--border-radius);
+  border: none;
+  outline: none;
+}
+
+.form-section {
+  background: var(--color-primary);
+}
+
+.form-container {
+  max-width: 600px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-box {
+  background: rgba(200, 169, 106, 0.1);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+input, select, textarea {
+  background: #0b0f0e;
+  color: var(--color-text);
+  border: 1px solid #1f2937;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-accent);
+}
