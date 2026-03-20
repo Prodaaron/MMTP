@@ -1,0 +1,19 @@
+:root {
+  /* COLORS */
+  --color-bg: #0b0f0e;
+  --color-primary: #0f2a1f;
+  --color-accent: #c8a96a; /* gold */
+  --color-text: #e6e6e6;
+  --color-muted: #9ca3af;
+
+  /* TYPOGRAPHY */
+  --font-main: 'Inter', sans-serif;
+
+  /* SPACING */
+  --section-padding: 100px;
+  --container-width: 1200px;
+
+  /* EFFECTS */
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
