@@ -5,6 +5,10 @@
   --color-accent: #c8a96a; /* gold */
   --color-text: #e6e6e6;
   --color-muted: #9ca3af;
+  --gold: #d4af37;
+  --white: #ffffff;
+  --text-muted: #bbbbbb;
+  --bg-dark: #0a0a0a;
 
   /* TYPOGRAPHY */
   --font-main: 'Inter', sans-serif;
