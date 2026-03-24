@@ -1,23 +1,88 @@
 :root {
-  /* COLORS */
-  --color-bg: #0b0f0e;
+  /* ================= COLORS ================= */
+
+  /* Base */
+  --color-bg: #080a09;
+  --color-bg-soft: #0d1110;
+  --color-surface: #111715;
+  --color-bg-light: #fefefe;
+
+  /* Primary (Brand Green) */
   --color-primary: #0f2a1f;
-  --color-accent: #c8a96a; /* gold */
+  --color-primary-light: #1c4d38;
+  --color-primary-accent: #7fbf4d;
+
+  /* Accent (Gold) */
+  --color-accent: #c8a96a;
+  --color-accent-strong: #d4af37;
+  --color-accent-soft: #e6c98a;
+
+  /* Text */
   --color-text: #e6e6e6;
-  --color-muted: #9ca3af;
-  --gold: #d4af37;
-  --white: #ffffff;
-  --text-muted: #bbbbbb;
-  --bg-dark: #0a0a0a;
+  --color-text-muted: #9ca3af;
+  --color-text-soft: #bbbbbb;
+  --color-heading: #ffffff;
 
-  /* TYPOGRAPHY */
+  /* Utility */
+  --color-border: #1f2a28;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-shadow: rgba(0, 0, 0, 0.4);
+
+  /* ================= TYPOGRAPHY ================= */
+
   --font-main: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
 
-  /* SPACING */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px;
+  --text-2xl: 36px;
+  --text-3xl: 48px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* ================= SPACING ================= */
+
   --section-padding: 100px;
-  --container-width: 1200px;
+  --section-padding-sm: 60px;
 
-  /* EFFECTS */
+  --container-width: 1200px;
+  --container-narrow: 900px;
+
+  --spacing-xs: 6px;
+  --spacing-sm: 12px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --spacing-xl: 80px;
+
+  /* ================= EFFECTS ================= */
+
+  --border-radius-sm: 8px;
   --border-radius: 12px;
+  --border-radius-lg: 20px;
+
+  --transition-fast: 0.2s ease;
   --transition: all 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  --shadow-sm: 0 4px 10px var(--color-shadow);
+  --shadow-md: 0 8px 20px var(--color-shadow);
+  --shadow-lg: 0 20px 40px var(--color-shadow);
+
+  /* ================= GRADIENTS ================= */
+
+  --gradient-primary: linear-gradient(135deg, #0f2a1f, #1c4d38);
+  --gradient-accent: linear-gradient(135deg, #c8a96a, #d4af37);
+  --gradient-hero: linear-gradient(135deg, #080a09, #0f2a1f);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  margin: 0 !important;
 }

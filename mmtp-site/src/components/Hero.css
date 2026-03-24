@@ -1,3 +1,4 @@
+/* HERO BASE */
 .hero {
   position: relative;
   height: 100vh;
@@ -5,44 +6,75 @@
   background-size: cover;
   display: flex;
   align-items: center;
-  color: var(--white);
+  overflow: hidden;
+  background: var(--color-bg);
 }
 
-/* Dark overlay for readability */
+/* PARALLAX BG */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(15, 42, 31, 0.6),
+    transparent 60%
+  );
+  z-index: 0;
+}
+
+/* OVERLAY */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(10, 10, 10, 0.9) 30%,
-    rgba(10, 10, 10, 0.5) 60%,
-    rgba(10, 10, 10, 0.2) 100%
+    rgba(8, 10, 9, 0.95),
+    rgba(8, 10, 9, 0.7),
+    rgba(8, 10, 9, 0.3)
   );
+  z-index: 1;
 }
 
-/* Content */
+/* CONTENT */
 .hero-content {
   position: relative;
-  max-width: 600px;
   z-index: 2;
+  max-width: 650px;
 }
 
-/* Title */
+/* CURSOR GLOW */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(127, 191, 77, 0.15),
+    transparent 70%
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  filter: blur(60px);
+}
+
+/* TITLE */
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-heading);
 }
 
-/* Subtitle */
+/* SUBTITLE */
 .hero-subtitle {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 30px;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
 }
 
-/* Buttons */
+/* BUTTONS */
 .hero-buttons {
   display: flex;
   gap: 15px;
@@ -59,7 +91,7 @@
 }
 
 .btn.primary {
-  background: var(--gold);
+  background: var( --color-accent-strong);
   color: black;
   font-weight: 600;
 }
@@ -70,8 +102,8 @@
 
 .btn.secondary {
   background: transparent;
-  border: 1px solid var(--gold);
-  color: var(--gold);
+  border: 1px solid var( --color-accent-strong);
+  color: var( --color-accent);
 }
 
 .btn.secondary:hover {

@@ -1,25 +1,69 @@
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.25 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 export default function Structure() {
+  const data = [
+    {
+      title: "Research Team",
+      text: "Import & Export market analysis and strategy.",
+    },
+    {
+      title: "Creative Team",
+      text: "Branding, content, and visual identity.",
+    },
+    {
+      title: "Operations",
+      text: "Execution, coordination, and logistics.",
+    },
+  ];
+
   return (
     <section className="section structure">
       <div className="container">
-        <h2 className="title">Program Structure</h2>
 
-        <div className="grid-3">
-          <div className="card">
-            <h3>Research Team</h3>
-            <p>Import & Export market analysis and strategy.</p>
-          </div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.h2 className="title" variants={item}>
+            Program Structure
+          </motion.h2>
 
-          <div className="card">
-            <h3>Creative Team</h3>
-            <p>Branding, content, and visual identity.</p>
-          </div>
+          <motion.div className="grid-3" variants={container}>
+            {data.map((card, i) => (
+              <motion.div
+                key={i}
+                className="card"
+                variants={item}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+              >
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
 
-          <div className="card">
-            <h3>Operations</h3>
-            <p>Execution, coordination, and logistics.</p>
-          </div>
-        </div>
       </div>
     </section>
   );

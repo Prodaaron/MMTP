@@ -1,10 +1,11 @@
 import "./Hero.css";
+import TradeLines from "./TradeLines";
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-overlay" />
-
+      <TradeLines />
       <div className="hero-content container">
         <h1 className="hero-title">
           MMTP Student Program

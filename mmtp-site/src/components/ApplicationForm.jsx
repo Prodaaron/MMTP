@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ApplicationForm() {
   const [form, setForm] = useState({
@@ -43,68 +44,94 @@ export default function ApplicationForm() {
   return (
     <section className="section form-section">
       <div className="container form-container">
-        
-        <div className="form-header">
-          <h2 className="title">Apply to MMTP</h2>
-          <p className="subtitle">
-            Join a program focused on real-world trade, strategy, and execution.
-          </p>
-        </div>
 
-        {success ? (
-          <div className="success-box">
-            <h3>Application Submitted</h3>
-            <p>We’ll review your application and get back to you.</p>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="form-header">
+            <h2 className="title">Apply to MMTP</h2>
+            <p className="subtitle">
+              Join a program focused on real-world trade, strategy, and execution.
+            </p>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit}>
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
+          <AnimatePresence mode="wait">
+            {success ? (
+              <motion.div
+                key="success"
+                className="success-box"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3>Application Submitted</h3>
+                <p>We’ll review your application and get back to you.</p>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                onSubmit={handleSubmit}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
+                {/* Inputs with animation */}
+                {["name", "email"].map((field) => (
+                  <motion.input
+                    key={field}
+                    type={field === "email" ? "email" : "text"}
+                    name={field}
+                    placeholder={field === "name" ? "Full Name" : "Email Address"}
+                    value={form[field]}
+                    onChange={handleChange}
+                    required
+                    whileFocus={{ scale: 1.02 }}
+                  />
+                ))}
 
-            <select
-              name="interest"
-              value={form.interest}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select Team</option>
-              <option value="Research - Import">Research (Import)</option>
-              <option value="Research - Export">Research (Export)</option>
-              <option value="Creative">Creative & Design</option>
-              <option value="Operations">Operations</option>
-            </select>
+                <motion.select
+                  name="interest"
+                  value={form.interest}
+                  onChange={handleChange}
+                  required
+                  whileFocus={{ scale: 1.02 }}
+                >
+                  <option value="">Select Team</option>
+                  <option value="Research - Import">Research (Import)</option>
+                  <option value="Research - Export">Research (Export)</option>
+                  <option value="Creative">Creative & Design</option>
+                  <option value="Operations">Operations</option>
+                </motion.select>
 
-            <textarea
-              name="message"
-              placeholder="Why do you want to join MMTP?"
-              rows="5"
-              value={form.message}
-              onChange={handleChange}
-              required
-            />
+                <motion.textarea
+                  name="message"
+                  placeholder="Why do you want to join MMTP?"
+                  rows="5"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                  whileFocus={{ scale: 1.02 }}
+                />
 
-            <button className="btn btn-primary" disabled={loading}>
-              {loading ? "Submitting..." : "Submit Application"}
-            </button>
+                <motion.button
+                  className="btn primary"
+                  disabled={loading}
+                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.03 }}
+                >
+                  {loading ? "Submitting..." : "Submit Application"}
+                </motion.button>
 
-          </form>
-        )}
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
       </div>
     </section>
   );
