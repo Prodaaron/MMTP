@@ -107,6 +107,6 @@
 }
 
 .btn.secondary:hover {
-  background: var(--gold);
+  background: var(--color-accent);
   color: black;
 }
