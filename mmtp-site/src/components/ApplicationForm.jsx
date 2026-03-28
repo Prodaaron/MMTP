@@ -44,7 +44,7 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section className="form-section">
+    <section className="form-section" id="applicationForm">
       <div className="form-wrapper">
 
         <motion.div
@@ -110,22 +110,6 @@ export default function ApplicationForm() {
                       required
                       whileFocus={{ scale: 1.02 }}
                     />
-                  </div>
-
-                  <div className="form-group">
-                    <motion.select
-                      name="interest"
-                      value={form.interest}
-                      onChange={handleChange}
-                      required
-                      whileFocus={{ scale: 1.02 }}
-                    >
-                      <option value="">Select Team</option>
-                      <option value="Research - Import">Research (Import)</option>
-                      <option value="Research - Export">Research (Export)</option>
-                      <option value="Creative">Creative & Design</option>
-                      <option value="Operations">Operations</option>
-                    </motion.select>
                   </div>
 
                   <div className="form-group">

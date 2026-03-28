@@ -16,7 +16,9 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <button className="btn primary">Apply Now</button>
+          <a href="#applicationForm">
+            <button className="btn primary">Apply Now</button>
+          </a>
           <button className="btn secondary">Learn More</button>
         </div>
       </div>
