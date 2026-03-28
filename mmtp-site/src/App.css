@@ -1,4 +1,8 @@
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 .container {
   width: 90%;
@@ -54,15 +58,10 @@
 form {
   display: flex;
   flex-direction: column;
+  
   gap: 15px;
   margin-top: 30px;
-}
-
-input, select, textarea {
-  padding: 12px;
-  border-radius: var(--border-radius);
-  border: none;
-  outline: none;
+  padding: 20px;
 }
 
 .form-section {
@@ -122,33 +121,28 @@ textarea:focus {
   overflow: hidden;
 }
 
-/* Each SVG line */
+/* BASE */
 .trade-line {
   position: absolute;
-  width: 120%;
-  left: -10%;
-  top: 40%;
-  opacity: 0.25;
+  width: 140%;
+  left: -20%;
+  opacity: 0.6;
 }
 
-/* Variation positioning */
-.trade-line:nth-child(1) {
-  top: 45%;
+/* PROPER SPACING (critical) */
+.line1 {
+  top: 25%;
 }
 
-.trade-line:nth-child(2) {
-  top: 60%;
+.line2 {
+  top: 50%;
 }
 
-/* Slight animation delay feel */
-.trade-line.delay {
-  opacity: 0.15;
+.line3 {
+  top: 75%;
 }
 
+/* PREMIUM GLOW */
 .trade-line path {
-  filter: drop-shadow(0 0 6px rgba(127, 191, 77, 0.3));
-}
-
-.trade-lines {
-  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  filter: drop-shadow(0 0 10px rgba(200, 169, 106, 0.6));
 }

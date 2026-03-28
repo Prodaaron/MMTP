@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--color-bg);
+  /* background: var(--color-bg); */
 }
 
 /* PARALLAX BG */

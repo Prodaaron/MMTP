@@ -3,6 +3,8 @@ import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { motion, AnimatePresence } from "framer-motion";
 
+import "./ApplicationForm.css";
+
 export default function ApplicationForm() {
   const [form, setForm] = useState({
     name: "",
@@ -42,8 +44,8 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section className="section form-section">
-      <div className="container form-container">
+    <section className="form-section">
+      <div className="form-wrapper">
 
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -51,85 +53,108 @@ export default function ApplicationForm() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+
+          {/* HEADER */}
           <div className="form-header">
-            <h2 className="title">Apply to MMTP</h2>
-            <p className="subtitle">
+            <h2>Apply to MMTP</h2>
+            <p>
               Join a program focused on real-world trade, strategy, and execution.
             </p>
           </div>
 
-          <AnimatePresence mode="wait">
-            {success ? (
-              <motion.div
-                key="success"
-                className="success-box"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3>Application Submitted</h3>
-                <p>We’ll review your application and get back to you.</p>
-              </motion.div>
-            ) : (
-              <motion.form
-                key="form"
-                onSubmit={handleSubmit}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
+          {/* FORM CARD */}
+          <div className="form-card">
 
-                {/* Inputs with animation */}
-                {["name", "email"].map((field) => (
-                  <motion.input
-                    key={field}
-                    type={field === "email" ? "email" : "text"}
-                    name={field}
-                    placeholder={field === "name" ? "Full Name" : "Email Address"}
-                    value={form[field]}
-                    onChange={handleChange}
-                    required
-                    whileFocus={{ scale: 1.02 }}
-                  />
-                ))}
-
-                <motion.select
-                  name="interest"
-                  value={form.interest}
-                  onChange={handleChange}
-                  required
-                  whileFocus={{ scale: 1.02 }}
+            <AnimatePresence mode="wait">
+              {success ? (
+                <motion.div
+                  key="success"
+                  className="success-box"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <option value="">Select Team</option>
-                  <option value="Research - Import">Research (Import)</option>
-                  <option value="Research - Export">Research (Export)</option>
-                  <option value="Creative">Creative & Design</option>
-                  <option value="Operations">Operations</option>
-                </motion.select>
-
-                <motion.textarea
-                  name="message"
-                  placeholder="Why do you want to join MMTP?"
-                  rows="5"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  whileFocus={{ scale: 1.02 }}
-                />
-
-                <motion.button
-                  className="btn primary"
-                  disabled={loading}
-                  whileTap={{ scale: 0.95 }}
-                  whileHover={{ scale: 1.03 }}
+                  <h3>Application Submitted</h3>
+                  <p>We’ll review your application and get back to you.</p>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  onSubmit={handleSubmit}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="form-fields"
                 >
-                  {loading ? "Submitting..." : "Submit Application"}
-                </motion.button>
 
-              </motion.form>
-            )}
-          </AnimatePresence>
+                  <div className="form-group">
+                    <motion.input
+                      type="text"
+                      name="name"
+                      placeholder="Full Name"
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                      whileFocus={{ scale: 1.02 }}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <motion.input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      whileFocus={{ scale: 1.02 }}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <motion.select
+                      name="interest"
+                      value={form.interest}
+                      onChange={handleChange}
+                      required
+                      whileFocus={{ scale: 1.02 }}
+                    >
+                      <option value="">Select Team</option>
+                      <option value="Research - Import">Research (Import)</option>
+                      <option value="Research - Export">Research (Export)</option>
+                      <option value="Creative">Creative & Design</option>
+                      <option value="Operations">Operations</option>
+                    </motion.select>
+                  </div>
+
+                  <div className="form-group">
+                    <motion.textarea
+                      name="message"
+                      placeholder="Why do you want to join MMTP?"
+                      rows="5"
+                      value={form.message}
+                      onChange={handleChange}
+                      required
+                      whileFocus={{ scale: 1.02 }}
+                    />
+                  </div>
+
+                  <motion.button
+                    type="submit"
+                    disabled={loading}
+                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.03 }}
+                    className="submit-btn"
+                  >
+                    {loading ? "Submitting..." : "Submit Application"}
+                  </motion.button>
+
+                </motion.form>
+              )}
+            </AnimatePresence>
+
+          </div>
         </motion.div>
 
       </div>
