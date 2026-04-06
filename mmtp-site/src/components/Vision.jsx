@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
+import "./vision.css"
 
 export default function Vision() {
   return (
-    <section className="section">
+    <section className="section Vsec">
       <div className="container">
 
         <motion.div
@@ -16,15 +17,50 @@ export default function Vision() {
         >
           <h2 className="title">Our Vision</h2>
 
-          <motion.p
-            className="subtitle"
+          <div className="vision-card">
+            <motion.p
+            className="subtitle vsec-text"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            MMTP aims to develop individuals capable of operating in global markets,
-            building businesses, and contributing to real trade ecosystems.
-          </motion.p>
+            >
+              “In high school, I missed oppotunites—not from lack of ability but from fear of judgment from my peers. Looking back, I realized how much growth comes from stepping forward, leading, and working with others. MMTP was created to ensure others don't miss those same opportunites. My vision is to make MMTP a global program where it's not late for students who are willing to do something meaningful. Let's make it happen together.”
+
+              <motion.p
+              className="subtitle vsec-text vsec-name"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                — Aron M.
+              </motion.p>
+
+              <motion.p
+              className="subtitle vsec-text vsec-name"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                Let's Connect...
+              </motion.p>
+
+              <motion.p
+              className="subtitle vsec-text vsec-name"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                <img src="./linkedin-svgrepo-com.svg" alt="" className="social-icon"/>
+              </motion.p>
+
+             
+            </motion.p>
+              
+
+          <div className="vsec-profile">
+
+          </div>
+          </div>
         </motion.div>
 
       </div>

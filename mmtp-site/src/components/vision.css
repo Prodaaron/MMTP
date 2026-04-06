@@ -1,0 +1,38 @@
+.vision-card {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border:  1px solid var(--color-border);
+    border-radius: 2rem;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.vsec-text {
+    font-size: 1.2rem;
+}
+
+.vsec-name {
+    text-align: right;
+}
+
+.vsec-profile {
+    padding: 4rem;
+    border-radius: 50%;
+    /* background-color: #848484; */
+    background-image: url("./aron-pp-img.jpg");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.social-icon {
+    width: 50px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, .3));
+    transition: ease-in-out .25s;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
