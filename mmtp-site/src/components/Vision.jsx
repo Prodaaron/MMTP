@@ -35,23 +35,7 @@ export default function Vision() {
                 — Aron M.
               </motion.p>
 
-              <motion.p
-              className="subtitle vsec-text vsec-name"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              >
-                Let's Connect...
-              </motion.p>
-
-              <motion.p
-              className="subtitle vsec-text vsec-name"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              >
-                <img src="./linkedin-svgrepo-com.svg" alt="" className="social-icon"/>
-              </motion.p>
+              
 
              
             </motion.p>
