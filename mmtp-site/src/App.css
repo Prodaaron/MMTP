@@ -164,3 +164,30 @@ textarea:focus {
 .trade-line path {
   filter: drop-shadow(0 0 10px rgba(200, 169, 106, 0.6));
 }
+
+.part-sec {
+  background-color: #e6e6e6;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.part-sec a {
+  width: 30%;
+}
+
+.logo-cont {
+  display: flex;
+  align-items: center;
+}
+
+.mehha-logo {
+  width: 100%;
+}
+
+.part-sub {
+  padding: 2rem;
+  color: #515151;
+  font-size: 1.2rem;
+}

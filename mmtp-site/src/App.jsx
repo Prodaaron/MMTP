@@ -10,6 +10,7 @@ import ApplicationForm from "./components/ApplicationForm";
 import ScrollReveal from "./components/ScrollReveal";
 import { useScroll, motion } from "framer-motion";
 import Social from "./components/Social.jsx";
+import Partnership from "./components/partnership.jsx";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -37,6 +38,7 @@ function App() {
       <ScrollReveal><Benefits /></ScrollReveal>
       <ScrollReveal><Vision /></ScrollReveal>
       <ScrollReveal><Social /></ScrollReveal>
+      <ScrollReveal><Partnership /></ScrollReveal>
       <ScrollReveal><ApplicationForm /></ScrollReveal>
     </>
   );
