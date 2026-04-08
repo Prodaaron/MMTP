@@ -27,8 +27,8 @@ export default function Structure() {
       text: "Branding, content, and visual identity.",
     },
     {
-      title: "Operations",
-      text: "Execution, coordination, and logistics.",
+      title: "Marketing Team",
+      text: "Search, gain leads, and reach out.",
     },
   ];
 
@@ -43,7 +43,7 @@ export default function Structure() {
           viewport={{ once: true }}
         >
           <motion.h2 className="title" variants={item}>
-            Program Structure
+            Team Structure
           </motion.h2>
 
           <motion.div className="grid-3" variants={container}>

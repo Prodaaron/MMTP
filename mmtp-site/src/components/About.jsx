@@ -32,6 +32,7 @@ export default function About() {
           <motion.h2 className="title" variants={item}>
             <h2 className="sec-header">What is MMTP?</h2>
           </motion.h2>
+          <p className="main-sub">MEHHA MARKETING & TRADE PROGRAM</p>
 
           <motion.div className="grid-3" variants={container}>
 
